@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Birthday Wish ✨</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:Georgia,"Times New Roman",serif;
+    color:white;
+    background:
+        radial-gradient(circle at top,#493451,#211726 50%,#08060c);
+}
+
+/* Stars */
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.7);}
+    to{opacity:1;transform:scale(1.4);}
+}
+
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:650px;
+    padding:55px 30px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(18px);
+    box-shadow:0 20px 70px rgba(0,0,0,.5);
+    animation:appear 1.5s ease;
+}
+
+.small{
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    opacity:.65;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(42px,9vw,75px);
+    font-weight:400;
+    line-height:1.05;
+    letter-spacing:2px;
+    text-shadow:0 0 30px rgba(255,255,255,.3);
+}
+
+.subtitle{
+    margin-top:25px;
+    font-family:Arial,sans-serif;
+    font-size:16px;
+    opacity:.72;
+    letter-spacing:1px;
+}
+
+button{
+    margin-top:38px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#201626;
+    font-size:15px;
+    cursor:pointer;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(255,255,255,.3);
+}
+
+.by{
+    margin-top:35px;
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    letter-spacing:4px;
+    opacity:.5;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<80;i++){
+    const star=document.createElement("div");
+    star.className="star";
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+    star.style.animationDelay=Math.random()*2+"s";
+    document.body.appendChild(star);
+}
+</script>
+
+<div class="container">
+    <div class="card">
+
+        <div class="small">
+            A little birthday wish ✨
+        </div>
+
+        <h1>
+            Wishing You<br>
+            a Very Happy<br>
+            Birthday
+        </h1>
+
+        <div class="subtitle">
+            A special wish made just for you.
+        </div>
+
+        <button onclick="openWish()">
+            Open Your Wish ✨
+        </button>
+
+        <div class="by">
+            THIS IS BY SPRING BOY
+        </div>
+
+    </div>
+</div>
+
+<script>
+function openWish(){
+    window.location.href="birthday.html";
+}
+</script>
+
+</body>
+</html>
