@@ -1,109 +1,149 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Bushra 🎂</title>
+    <title>Happy Birthday Bushra 🎂</title>
 
-<link
-    rel="stylesheet"
-    href="birthday.css"
->
+    <link rel="stylesheet" href="birthday.css">
+</head>
 
-</head><body><!-- Night sky -->
-<div id="sky"></div>
+<body>
 
-<!-- Moon -->
-<div class="moon">☾</div>
+    <!-- Falling stars and moons -->
+    <div id="sky"></div>
 
-<!-- Main card -->
-<main class="card">
+    <!-- Background glow -->
+    <div class="glow"></div>
 
-    <div class="emoji">
-        🎂
-    </div>
+    <main class="birthday-container">
 
-    <div class="small">
-        Today is your special day
-    </div>
+        <!-- MAIN BIRTHDAY CARD -->
+        <section class="main-card">
 
-    <h1>
-        Happy Birthday<br>
-        Bushra ✨
-    </h1>
+            <div class="emoji">🎂</div>
 
-    <div class="divider"></div>
+            <div class="small">
+                TODAY IS YOUR SPECIAL DAY
+            </div>
 
-    <div
-        class="message"
-        id="message"
-    >
-        May your day be filled with
-        happiness, laughter and beautiful memories. ✨
+            <h1>
+                Happy Birthday<br>
+                Bushra ✨
+            </h1>
 
-        <br><br>
+            <div class="divider"></div>
 
-        Keep smiling and keep shining. 🌙
-    </div>
+            <p class="main-message">
+                May your day be filled with<br>
+                happiness, laughter and beautiful memories. ✨
+            </p>
 
-    <div class="divider"></div>
+            <p class="main-message">
+                Keep smiling and keep shining. 🌙
+            </p>
 
-    <div class="wish-box">
+            <div class="divider"></div>
 
-        <p id="wishText">
-            May this year bring you
-            countless beautiful moments.
-        </p>
+            <div class="from">
+                WITH BEST WISHES
+                <br><br>
+                SPRING BOY
+            </div>
 
-    </div>
+            <div class="edited">
+                Edited by Madhvendra
+            </div>
+
+        </section>
+
+
+        <!-- FOUR WISH CARDS -->
+        <section class="wish-grid">
+
+            <!-- CARD 1 -->
+            <div class="wish-card">
+
+                <div class="wish-icon">✨</div>
+
+                <h2>Happiness</h2>
+
+                <p>
+                    May your days always be filled
+                    with happiness and laughter.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="wish-card">
+
+                <div class="wish-icon">🌙</div>
+
+                <h2>Beautiful Memories</h2>
+
+                <p>
+                    May this year bring you
+                    countless beautiful memories.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="wish-card">
+
+                <div class="wish-icon">⭐</div>
+
+                <h2>Your Dreams</h2>
+
+                <p>
+                    May you achieve the dreams
+                    you are working towards.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+            <div class="wish-card">
+
+                <div class="wish-icon">💫</div>
+
+                <h2>Keep Shining</h2>
+
+                <p>
+                    Keep smiling, keep shining,
+                    and enjoy your special day.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MUSIC -->
+    <audio
+        id="birthdayMusic"
+        src="birthday.mp3"
+        loop
+        preload="auto">
+    </audio>
 
     <button
-        class="nextWish"
-        id="nextWish"
-    >
-        Another Wish ✨
+        class="music"
+        id="musicBtn"
+        onclick="toggleMusic()">
+        ♫
     </button>
 
-    <div class="divider"></div>
 
-    <div class="from">
+    <script src="birthday.js"></script>
 
-        WITH BEST WISHES
-
-        <br><br>
-
-        SPRING BOY
-
-        <div class="edited">
-            Edited by Madhvendra
-        </div>
-
-    </div>
-
-</main>
-
-
-<!-- Music -->
-<button
-    class="music"
-    id="musicBtn"
-    aria-label="Play birthday music"
->
-    ♫
-</button>
-
-
-<!-- Audio -->
-<audio
-    id="birthdayMusic"
-    src="birthday.mp3"
-    loop
-    preload="auto"
-></audio>
-
-
-<script src="birthday.js"></script>
-
-</body></html>
+</body>
+</html>
