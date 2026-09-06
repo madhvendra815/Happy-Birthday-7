@@ -1,0 +1,386 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,
+body{
+width:100%;
+height:100%;
+}
+
+body{
+min-height:100vh;
+overflow:hidden;
+
+font-family:Georgia,"Times New Roman",serif;
+color:white;
+
+background:
+    radial-gradient(
+        circle at 50% 15%,
+        #493451 0%,
+        #211726 48%,
+        #08060c 100%
+    );
+
+}
+
+/* =========================
+NIGHT SKY
+========================= */
+
+#sky{
+position:fixed;
+inset:0;
+overflow:hidden;
+pointer-events:none;
+}
+
+/* =========================
+STATIC STARS
+========================= */
+
+.star{
+position:absolute;
+
+width:3px;
+height:3px;
+
+border-radius:50%;
+background:white;
+
+opacity:.7;
+
+animation:
+    twinkle 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes twinkle{
+
+from{
+    opacity:.2;
+    transform:scale(.7);
+}
+
+to{
+    opacity:1;
+    transform:scale(1.5);
+}
+
+}
+
+/* =========================
+FALLING OBJECTS
+========================= */
+
+.falling{
+position:absolute;
+
+top:-50px;
+
+color:white;
+
+pointer-events:none;
+
+animation:
+    fall linear forwards;
+
+text-shadow:
+    0 0 8px rgba(255,255,255,.7),
+    0 0 18px rgba(255,215,232,.35);
+
+}
+
+@keyframes fall{
+
+0%{
+    transform:
+        translateY(-50px)
+        translateX(0)
+        rotate(0deg);
+
+    opacity:0;
+}
+
+10%{
+    opacity:.9;
+}
+
+50%{
+    transform:
+        translateY(50vh)
+        translateX(35px)
+        rotate(180deg);
+}
+
+100%{
+    transform:
+        translateY(115vh)
+        translateX(-35px)
+        rotate(360deg);
+
+    opacity:0;
+}
+
+}
+
+/* =========================
+MAIN CONTAINER
+========================= */
+
+.container{
+position:relative;
+z-index:2;
+
+width:100%;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+/* =========================
+GLASS CARD
+========================= */
+
+.card{
+width:100%;
+max-width:650px;
+
+padding:55px 30px;
+
+border:
+    1px solid rgba(255,255,255,.18);
+
+border-radius:30px;
+
+background:
+    rgba(255,255,255,.07);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:
+    0 20px 70px rgba(0,0,0,.5),
+    inset 0 0 30px rgba(255,255,255,.03);
+
+animation:
+    appear 1.5s ease;
+
+}
+
+/* =========================
+SMALL TEXT
+========================= */
+
+.small{
+font-family:Arial,sans-serif;
+
+font-size:13px;
+
+letter-spacing:5px;
+
+text-transform:uppercase;
+
+opacity:.65;
+
+margin-bottom:25px;
+
+}
+
+/* =========================
+HEADING
+========================= */
+
+h1{
+font-size:
+clamp(42px,9vw,75px);
+
+font-weight:400;
+
+line-height:1.05;
+
+letter-spacing:2px;
+
+text-shadow:
+    0 0 30px rgba(255,255,255,.3);
+
+}
+
+/* =========================
+SUBTITLE
+========================= */
+
+.subtitle{
+margin-top:25px;
+
+font-family:Arial,sans-serif;
+
+font-size:16px;
+
+opacity:.72;
+
+letter-spacing:1px;
+
+}
+
+/* =========================
+BUTTON
+========================= */
+
+button{
+margin-top:38px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#201626;
+
+font-size:15px;
+
+cursor:pointer;
+
+letter-spacing:2px;
+
+transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+button:hover{
+transform:translateY(-4px);
+
+box-shadow:
+    0 10px 30px rgba(255,255,255,.3);
+
+}
+
+button:active{
+transform:scale(.95);
+}
+
+/* =========================
+CREDIT
+========================= */
+
+.by{
+margin-top:35px;
+
+font-family:Arial,sans-serif;
+
+font-size:12px;
+
+letter-spacing:4px;
+
+opacity:.5;
+
+}
+
+/* =========================
+CARD ENTRANCE
+========================= */
+
+@keyframes appear{
+
+from{
+    opacity:0;
+
+    transform:
+        translateY(30px)
+        scale(.95);
+}
+
+to{
+    opacity:1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+}
+
+/* =========================
+BUTTON TRANSITION
+========================= */
+
+body.leaving .card{
+
+animation:
+    leavePage 1s ease forwards;
+
+}
+
+@keyframes leavePage{
+
+to{
+    opacity:0;
+
+    transform:
+        scale(1.08)
+        translateY(-20px);
+
+    filter:blur(8px);
+}
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:600px){
+
+.container{
+    padding:15px;
+}
+
+.card{
+    padding:45px 20px;
+
+    border-radius:25px;
+}
+
+.small{
+    font-size:10px;
+
+    letter-spacing:3px;
+}
+
+h1{
+    font-size:
+        clamp(38px,11vw,60px);
+}
+
+.subtitle{
+    font-size:14px;
+}
+
+button{
+    padding:14px 28px;
+
+    font-size:13px;
+}
+
+.by{
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+}
